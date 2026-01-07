@@ -28,8 +28,7 @@ rooms.forEach(room => {
 
     roomPreview.src = img.src;
 
-    // reset old glow
-    nameText.className = "name-text";
+       nameText.className = "name-text"; // reset old glow
 
     const roomIndex = [...rooms].indexOf(room) + 1;
     nameText.classList.add(`glow-room-${roomIndex}`);
@@ -77,75 +76,26 @@ backBtn.addEventListener("click", () => {
 });
 
 // ======================
-// SANITIZE STYLES FOR html2canvas
-// ======================
-function sanitizeForCanvas() {
-  const modified = [];
-
-  document.querySelectorAll("*").forEach(el => {
-    const style = getComputedStyle(el);
-
-    // Unsupported color()
-    if (style.color.includes("color(")) {
-      modified.push({ el, prop: "color", value: el.style.color });
-      el.style.color = "#ffffff";
-    }
-
-    if (style.background.includes("color(")) {
-      modified.push({ el, prop: "background", value: el.style.background });
-      el.style.background = "transparent";
-    }
-
-    // Filters break html2canvas
-    if (style.filter !== "none") {
-      modified.push({ el, prop: "filter", value: el.style.filter });
-      el.style.filter = "none";
-    }
-
-    if (style.backdropFilter && style.backdropFilter !== "none") {
-      modified.push({ el, prop: "backdropFilter", value: el.style.backdropFilter });
-      el.style.backdropFilter = "none";
-    }
-  });
-
-  return modified;
-}
-
-function restoreStyles(modified) {
-  modified.forEach(({ el, prop, value }) => {
-    el.style[prop] = value || "";
-  });
-}
-
-// ======================
-// DOWNLOAD IMAGE (SAFE)
+// DOWNLOAD IMAGE (ONLY ONCE)
 // ======================
 downloadBtn.onclick = async () => {
 
   try {
     await roomPreview.decode();
-  } catch {}
+  } catch (e) {}
 
   await new Promise(r => requestAnimationFrame(r));
-
-  // 🔥 SANITIZE BEFORE CAPTURE
-  const modifiedStyles = sanitizeForCanvas();
 
   const canvasTarget = document.querySelector(".editor-canvas");
 
   const canvas = await html2canvas(canvasTarget, {
     backgroundColor: "#000000",
-    scale: 4,          // 6 was overkill, this is safer
-    useCORS: true,
-    logging: false
+    scale: 6,
+    useCORS: true
   });
-
-  // 🔁 RESTORE STYLES
-  restoreStyles(modifiedStyles);
 
   const link = document.createElement("a");
   link.download = "seismic-room.png";
   link.href = canvas.toDataURL("image/png");
   link.click();
 };
-
