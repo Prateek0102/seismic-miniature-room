@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seismic Miniature Room GENERATOR</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="stage">
+
+    <!-- ======================
+         GRID VIEW
+    ====================== -->
+    <div class="grid-view">
+      <h1 class="title">SEISMIC MINIATURE ROOM GENERATOR</h1>
+
+      <div class="rooms-grid">
+        <div class="room"><img src="assets/rooms/room1.png"></div>
+        <div class="room"><img src="assets/rooms/room2.png"></div>
+        <div class="room"><img src="assets/rooms/room3.png"></div>
+        <div class="room"><img src="assets/rooms/room4.png"></div>
+        <div class="room"><img src="assets/rooms/room5.png"></div>
+        <div class="room"><img src="assets/rooms/room6.png"></div>
+        <div class="room"><img src="assets/rooms/room7.png"></div>
+        <div class="room"><img src="assets/rooms/room8.png"></div>
+        <div class="room"><img src="assets/rooms/room9.png"></div>
+      </div>
+    </div>
+
+    <!-- ======================
+         EDITOR VIEW
+    ====================== -->
+    <div class="editor-view hidden">
+
+      <div class="editor-canvas">
+        <img id="roomPreview" class="room-preview">
+
+        <div class="wall-plane">
+          <div id="nameText" class="name-text">YOUR NAME</div>
+        </div>
+      </div>
+
+      <div class="editor-controls">
+        <input
+          id="nameInput"
+          type="text"
+          placeholder="Enter name (max 19 characters)"
+          maxlength="19"
+        />
+
+        <button id="downloadBtn">⬇ Download</button>
+        <button id="backBtn">← Back</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- html2canvas -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>
+
+
