@@ -1,9 +1,10 @@
 @font-face {
   font-family: 'NeonFuture';
-  src: url('fonts/NeonFuture.ttf') format('truetype');
+  src: url('./fonts/NeonFuture.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+
 
 * {
   margin: 0;
@@ -193,20 +194,20 @@ image-rendering: auto;
 /* Name text */
 .name-text {
   position: absolute;
-  top: 12%;
-  left: 85%;
+  top: 15%;
+  left: 80%;
   text-transform: uppercase;
 
   font-family: 'NeonFuture', sans-serif;
 
   transform:
-    translateX(-50%)
-    skewY(30deg)
+    translateX(-45%)
+    skewY(30.5deg)
     scaleX(0.92);
 
   transform-origin: center;
   color: #eaffff;
-  font-size: 40px;
+  font-size: 50px;
   letter-spacing: 2px;
 
   /* ✅ CRITICAL FIX (DO NOT CHANGE VALUES ABOVE) */
@@ -216,14 +217,16 @@ image-rendering: auto;
 
   text-align: center;
   line-height: 0.8;
+  
 
   text-shadow:
-    0 0 2px #00ffe0,
-    0 0 6px #00ffe0,
-    0 0 12px #00ffe0,
-    0 0 24px #00ffe0,
-    0 0 120px rgba(0, 255, 224, 9),
-    0 0 120px rgba(0, 255, 224, 6);
+  0 0 2px var(--glow),
+  0 0 6px var(--glow),
+  0 0 12px var(--glow),
+  0 0 24px var(--glow),
+  0 0 120px color-mix(in srgb, var(--glow), transparent 30%),
+  0 0 120px color-mix(in srgb, var(--glow), transparent 50%);
+
 }
 
 
@@ -273,6 +276,8 @@ image-rendering: auto;
   100% { transform: translateY(0); }
 
   
+
+  
 }
 
 /* ======================
@@ -295,5 +300,38 @@ image-rendering: auto;
   color: #00ffe0;
 }
 
+/* Default glow */
+.name-text {
+  --glow: #00ffe0;
+}
 
+/* ======================
+   ROOM-SPECIFIC GLOWS
+====================== */
 
+/* room 9 */
+.glow-room-9 { --glow: #00ffe0; }   /* cyan */
+
+/* room 8 */
+.glow-room-8 { --glow: #ff4d4d; }   /* red */
+
+/* room 7 */
+.glow-room-7 { --glow: #ff8c00; }   /* orange */
+
+/* room 6 */
+.glow-room-6 { --glow: #ffd700; }   /* yellow */
+
+/* room 5 */
+.glow-room-5 { --glow: #14532d; }   /* dark green */
+
+/* room 4 */
+.glow-room-4 { --glow: #4ade80; }   /* light green */
+
+/* room 3 */
+.glow-room-3 { --glow: #22c55e; }   /* green */
+
+/* room 2 */
+.glow-room-2 { --glow: #16a34a; }   /* green */
+
+/* room 1 */
+.glow-room-1 { --glow: #7c3f1d; }   /* brown */
