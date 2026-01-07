@@ -206,7 +206,7 @@ image-rendering: auto;
 
   transform-origin: center;
   color: #eaffff;
-  font-size: 60px;
+  font-size: 50px;
   letter-spacing: 2px;
 
   /* ✅ CRITICAL FIX (DO NOT CHANGE VALUES ABOVE) */
@@ -274,5 +274,6 @@ image-rendering: auto;
 
   
 }
+
 
 
