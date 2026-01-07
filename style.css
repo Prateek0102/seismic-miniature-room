@@ -219,13 +219,14 @@ image-rendering: auto;
   line-height: 0.8;
   
 
-  text-shadow:
-  0 0 2px var(--glow),
-  0 0 6px var(--glow),
-  0 0 12px var(--glow),
-  0 0 24px var(--glow),
-  0 0 120px color-mix(in srgb, var(--glow), transparent 30%),
-  0 0 120px color-mix(in srgb, var(--glow), transparent 50%);
+text-shadow:
+  0 0 2px #00ffe0,
+  0 0 6px #00ffe0,
+  0 0 12px #00ffe0,
+  0 0 24px #00ffe0,
+  0 0 120px rgba(0, 255, 224, 9),
+  0 0 120px rgba(0, 255, 224, 6);
+
 
 }
 
@@ -304,3 +305,4 @@ image-rendering: auto;
 .name-text {
   --glow: #00ffe0;
 }
+
