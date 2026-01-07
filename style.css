@@ -132,7 +132,7 @@ body {
 
 /* Extra depth */
 .room:hover img {
-  transform: scale(1.02);
+  transform: scale(1.2);
 }
 
 /* Floating animation */
@@ -335,4 +335,5 @@ image-rendering: auto;
 
 /* room 1 */
 .glow-room-1 { --glow: #7c3f1d; }   /* brown */
+
 
