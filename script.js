@@ -28,6 +28,11 @@ rooms.forEach(room => {
 
     roomPreview.src = img.src;
 
+       nameText.className = "name-text"; // reset old glow
+
+    const roomIndex = [...rooms].indexOf(room) + 1;
+    nameText.classList.add(`glow-room-${roomIndex}`);
+
     gridView.classList.add("hidden");
     editorView.classList.remove("hidden");
   });
