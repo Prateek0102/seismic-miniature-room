@@ -126,7 +126,7 @@ body {
 /* Hover pop towards screen */
 /* Hover pop happens on IMAGE, not container */
 .room:hover img {
-  transform: scale(1.18);
+  transform: scale(1.8);
 }
 
 
@@ -335,3 +335,4 @@ image-rendering: auto;
 
 /* room 1 */
 .glow-room-1 { --glow: #7c3f1d; }   /* brown */
+
