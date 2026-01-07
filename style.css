@@ -56,7 +56,7 @@ body {
 
 /* simple hover pop (safe) */
 .room:hover {
-  transform: scale(1.05);
+  transform: scale(2);
   box-shadow: 0 10px 25px rgba(0, 255, 255, 0.25);
 }
 
@@ -153,3 +153,4 @@ body {
 .controls button:hover {
   opacity: 0.85;
 }
+
